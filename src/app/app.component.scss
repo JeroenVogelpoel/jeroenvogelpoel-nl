@@ -1,0 +1,30 @@
+nav#mainNavBar {
+    display: flex;
+
+    background-color: lightgrey;
+
+    a {
+        flex: 1 0 auto;
+        display: block;
+        
+        padding: 0.5em 0;
+
+        text-align: center;
+        text-decoration: none;
+        color: unset;
+
+        &.nav-link:hover {
+            background-color: black;
+            color: white;
+
+        }
+    }
+}
+
+article.container {
+    padding: 0 10vw;
+}
+
+.align-right {
+    text-align: right;
+}
