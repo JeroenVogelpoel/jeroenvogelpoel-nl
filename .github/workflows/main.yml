@@ -51,7 +51,19 @@ jobs:
           cd artifact
           for file in ** 
           do
-            [ -f $file ] &&
-              curl -T $file "https://$azure_storage_account.blob.core.windows.net/$azure_storage_container/$file$azure_storage_sas" \
-                -H 'x-ms-blob-type: BlockBlob'
+            # Skip not regular files
+            ! [ -f $file ] && continue;
+            
+            # Get mime type
+            mime_type="text/plain";
+            case $file in
+              *.js) mime_type="text/javascript";
+              *.css) mime_type="text/css";
+              *) mime_type=`file $file -b --mime-type`
+            esac
+            
+            # Upload using Azure Storage Blob REST API
+            curl -T $file "https://$azure_storage_account.blob.core.windows.net/$azure_storage_container/$file$azure_storage_sas" \
+              -H 'x-ms-blob-type: BlockBlob' \
+              -H "Content-Type: $mime_type"
            done
