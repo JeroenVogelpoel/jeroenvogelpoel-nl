@@ -57,9 +57,9 @@ jobs:
             # Get mime type
             mime_type="text/plain";
             case $file in
-              *.js) mime_type="text/javascript";
-              *.css) mime_type="text/css";
-              *) mime_type=`file $file -b --mime-type`
+              *.js) mime_type="text/javascript";;
+              *.css) mime_type="text/css";;
+              *) mime_type=`file $file -b --mime-type`;;
             esac
             
             # Upload using Azure Storage Blob REST API
