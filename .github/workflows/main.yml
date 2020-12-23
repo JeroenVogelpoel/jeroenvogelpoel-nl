@@ -31,7 +31,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v2
         with:
-          path: dist
+          path: dist/jeroenvogelpoel-nl
 
   deploy:
     runs-on: ubuntu-latest
