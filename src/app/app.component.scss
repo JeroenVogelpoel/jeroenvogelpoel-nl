@@ -1,13 +1,44 @@
-nav#mainNavBar {
-    display: flex;
+@import "../mixins.scss";
 
-    background-color: lightgrey;
+:host {
+    background-color: var(--default-bg-color);
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    flex-flow: column nowrap;
+
+    @include is-nav-sidebar() {
+        flex-flow: row nowrap;
+    }
+}
+
+article {
+    background-color: var(--article-bg-color);
+    flex: 1 1 auto;
+    padding: 0 2vw;
+
+    overflow: auto;
+}
+
+nav {
+    background-color: var(--default-bg-color);
+    display: flex;
+    position: sticky;
+    top: 0;
+
+    flex-flow: row nowrap;
+
+    @include is-nav-sidebar() {
+        flex-flow: column nowrap;
+        align-self: flex-start;
+    }
 
     a {
         flex: 1 0 auto;
         display: block;
         
-        padding: 0.5em 0;
+        padding: 0.75em 2em;
 
         text-align: center;
         text-decoration: none;
@@ -16,15 +47,6 @@ nav#mainNavBar {
         &.nav-link:hover {
             background-color: black;
             color: white;
-
         }
     }
-}
-
-article.container {
-    padding: 0 10vw;
-}
-
-.align-right {
-    text-align: right;
 }

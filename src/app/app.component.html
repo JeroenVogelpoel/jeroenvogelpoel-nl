@@ -1,11 +1,11 @@
-<nav id="mainNavBar">
+<nav>
   <a class="nav-header" routerLink="/">Jeroen Vogelpoel</a>
   <a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a>
   <a class="nav-link" routerLinkActive="active" routerLink="/resume">Resume</a>
   <a class="nav-link" routerLinkActive="active" routerLink="/contact">Contact</a>
 </nav>
 
-<article class="container">
+<article>
   <header>
     <h1>{{ titleService.getTitle() }}</h1>
   </header>
@@ -16,8 +16,6 @@
 
   <footer>
     <hr />
-    <p class="align-right">
-      &copy; Jeroen Vogelpoel 2020
-    </p>
+    &copy; Jeroen Vogelpoel 2020
   </footer>
 </article>

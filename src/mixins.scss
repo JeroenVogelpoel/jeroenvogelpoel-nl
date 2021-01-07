@@ -1,0 +1,7 @@
+@import "./variables.scss";
+
+@mixin is-nav-sidebar() {
+    @media screen and (min-width: $sidebar-nav-breakpoint) {
+        @content;
+    }
+}
