@@ -7,6 +7,7 @@
     width: 100%;
 
     flex-flow: column nowrap;
+    overflow: auto;
 
     @include if-large() {
         flex-flow: row nowrap;
@@ -18,8 +19,11 @@ article {
     background-color: var(--article-bg-color);
     flex: 1 1 auto;
     align-self: normal;
-    overflow: auto;
     padding: 0 2vw;
+
+    @include if-medium-or-larger() {
+        overflow: auto;
+    }
 }
 
 nav {
@@ -27,17 +31,16 @@ nav {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
+    z-index: 100;
 
     @include if-medium() {
         flex-flow: row nowrap;
     }
 
     a {
-        color: unset;
         display: block;
         flex: 1 0 auto;
         text-align: center;
-        text-decoration: none;
 
         padding: 1em 0;
 
@@ -51,7 +54,7 @@ nav {
         }
     }
 
-    a.nav-header {
+    #brand {
         display: none;
 
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -59,5 +62,19 @@ nav {
         @include if-large() {
             display: block;
         }
+    }
+}
+
+a#scroll-to-top {
+    position: fixed;
+    top: 0;
+    right: 2em;
+
+    padding: 0.5em 1em;
+    background-color: var(--default-bg-color);
+    border-radius: 0 0 1em 1em;
+
+    @include if-medium-or-larger() {
+        display: none;
     }
 }

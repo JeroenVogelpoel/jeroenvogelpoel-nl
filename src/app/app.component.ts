@@ -11,4 +11,9 @@ export class AppComponent {
     this.titleService.setTitle("Not set");
   }
 
+  public ScrollToTop(): Boolean {
+    document.querySelector("app-root")!.scrollTop = 0;
+    return false;
+  }
+
 }

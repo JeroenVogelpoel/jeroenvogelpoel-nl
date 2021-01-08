@@ -1,8 +1,8 @@
 <nav>
-  <a class="nav-header" routerLink="/">Jeroen Vogelpoel</a>
-  <a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a>
-  <a class="nav-link" routerLinkActive="active" routerLink="/resume">Resume</a>
-  <a class="nav-link" routerLinkActive="active" routerLink="/contact">Contact</a>
+  <a class="plain" id="brand" routerLink="/">Jeroen Vogelpoel</a>
+  <a class="nav-link plain" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a>
+  <a class="nav-link plain" routerLinkActive="active" routerLink="/resume">Resume</a>
+  <a class="nav-link plain" routerLinkActive="active" routerLink="/contact">Contact</a>
 </nav>
 
 <article>
@@ -19,3 +19,8 @@
     &copy; Jeroen Vogelpoel 2020
   </footer>
 </article>
+
+<a class="plain" 
+  href="#"
+  id="scroll-to-top"
+  (click)="ScrollToTop()">⇈ Nav ⇈</a>
