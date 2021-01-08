@@ -1,7 +1,23 @@
 @import "./variables.scss";
 
-@mixin is-nav-sidebar() {
-    @media screen and (min-width: $sidebar-nav-breakpoint) {
+@mixin if-large() {
+    @media screen 
+        and (min-width: $medium-breakpoint + 1) {
+        @content;
+    }
+}
+
+@mixin if-medium-or-larger() {
+    @media screen
+        and (min-width: $small-breakpoint) {
+        @content;
+    }
+}
+
+@mixin if-medium() {
+    @media screen
+        and (max-width: $medium-breakpoint) 
+        and (min-width: $small-breakpoint) {
         @content;
     }
 }
